@@ -1,0 +1,148 @@
+/* ==== Background & Layout ==== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #9e285b, #e772c4);
+    animation: gradientMove 10s ease infinite alternate;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* ==== Main Container ==== */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==== Cartoon Clock ==== */
+.clock-illustration img {
+    width: 120px;
+    height: 120px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ==== Stopwatch Box ==== */
+.stopwatch-box {
+    text-align: center;
+    color: #333;
+}
+
+.title {
+    margin-bottom: 0.5em;
+    color: #5b135f;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ==== Display ==== */
+#display {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    font-family: 'Courier New', monospace;
+    color: #1a237e;
+    background: linear-gradient(90deg, #492847, #a81ca1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.08em;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px rgba(204, 68, 207, 0.3); }
+    to { text-shadow: 0 0 20px rgba(246, 41, 222, 0.5); }
+}
+
+/* ==== Buttons ==== */
+.buttons {
+    margin-bottom: 1em;
+}
+
+button {
+    padding: 12px 24px;
+    margin: 0 6px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* Button Colors */
+#start { background-color: #4CAF50; }
+#stop { background-color: #f44336; }
+#reset { background-color: #ff9800; }
+#lap { background-color: #2196F3; }
+
+#start:hover { background-color: #43a047; }
+#stop:hover { background-color: #e53935; }
+#reset:hover { background-color: #fb8c00; }
+#lap:hover { background-color: #1e88e5; }
+
+/* ==== Laps ==== */
+.laps-container {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ffb8ea;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(255, 168, 236, 0.7);
+}
+
+#laps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#laps li {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-family: 'Courier New', monospace;
+    background-color: white;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    transition: transform 0.2s;
+}
+
+#laps li:hover {
+    transform: scale(1.03);
+}
+
+#laps li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}

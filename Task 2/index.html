@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="clock-illustration">
+            <img src="https://cdn.pixabay.com/photo/2021/03/08/09/03/analog-6078537_640.png" alt="Clock Cartoon">
+        </div>
+        <div class="stopwatch-box">
+            <h1 class="title">⏱️ STOPWATCH</h1>
+            <div id="display">00:00:00</div>
+            <div class="buttons">
+                <button id="start">Start</button>
+                <button id="stop">Stop</button>
+                <button id="reset">Reset</button>
+                <button id="lap">Lap</button>
+            </div>
+            <div class="laps-container">
+                <ul id="laps"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
